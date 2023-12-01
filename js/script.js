@@ -3,14 +3,6 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
-/*** 
- * `quotes` array 
-***/
-
 // create array of quote objects
 const quotes = [
   {
@@ -78,11 +70,23 @@ function printQuote() {
   if (quoteInfo.hasOwnProperty("year")) {
     markup += `<span class="year">${quoteInfo.year}</span>`;
   }
-  if (quoteInfo.hasOwnProperty("tag")) {
+  if (quoteInfo.hasOwnProperty("year")) {
     markup += `<span class="tag"> tag:  ${quoteInfo.tag}</span>`;
   }
   markup += `</p>`;
   document.getElementById("quote-box").innerHTML = markup;
+
+  // simple random color changer for the background
+
+  let randomColor =
+    "rgb(" +
+    Math.floor(Math.random() * 256) +
+    "," +
+    Math.floor(Math.random() * 256) +
+    "," +
+    Math.floor(Math.random() * 256) +
+    ")";
+  document.body.style.backgroundColor = randomColor;
 }
 // execute printQuote() on click of button
 const button = document.getElementById("load-quote");
@@ -92,5 +96,3 @@ button.addEventListener("click", () => {
 });
 // set the printQuote() function to execute every ten seconds
 let interval = setInterval(printQuote, 10000);
-
-
