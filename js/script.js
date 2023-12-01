@@ -56,7 +56,6 @@ const quotes = [
 function getRandomQuote(quotes) {
   let randomNumber = Math.floor(Math.random() * quotes.length);
   return quotes[randomNumber];
-  //console.log(quotes[randomNumber]);
 }
 
 // take random quote from getRandomQuote() and insert it into the DOM
